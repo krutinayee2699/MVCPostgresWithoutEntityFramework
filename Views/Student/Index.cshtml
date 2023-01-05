@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MVCPostgres.Models.StudentModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center>
+    <h1>Fetch record from postgres database</h1>
+    <h3>In MVC without using entity framework</h3>
+
+
+    <hr/>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.studid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailid)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.emailid)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</center>
